@@ -1,0 +1,57 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    ea_wp_api: '%env(EA_WP_API)%'
+    ea_redis_host: '%env(EA_REDIS_HOST)%'
+    ea_redis_port: '%env(EA_REDIS_PORT)%'
+    files_directory: 'uploads'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Entity/Flusher.php,Tests,Kernel.php}'
+
+    App\Entity\Chat\Message\MessageRepository: ~
+    App\Entity\Chat\Room\RoomRepository: ~
+    App\Entity\Chat\User\UserRepository: ~
+    App\Entity\Chat\News\NewsRepository: ~
+    App\Entity\Chat\ArchivedNews\ArchiveNewsRepository: ~
+    App\Entity\Files\File\FileRepository: ~
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+    App\Service\Uploader\FileUploader:
+        arguments:
+            $targetDirectory: '%files_directory%'
+
+    Redis:
+        # you can also use \RedisArray, \RedisCluster or \Predis\Client classes
+        class: Redis
+        calls:
+            - connect:
+                - '%env(EA_REDIS_HOST)%'
+                - '%env(int:EA_REDIS_PORT)%'
+
+            # uncomment the following if your Redis server requires a password
+            # - auth:
+            #     - '%env(REDIS_PASSWORD)%'
+    
+    Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler:
+        arguments:
+            - '@Redis'

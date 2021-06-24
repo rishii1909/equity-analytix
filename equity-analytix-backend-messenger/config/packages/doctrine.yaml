@@ -1,0 +1,41 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+
+        types:
+            chat_message_id: 'App\Entity\Chat\Message\IdType'
+
+            chat_news_status: 'App\Entity\Chat\News\StatusType'
+            chat_news_archive: 'App\Entity\Chat\News\ArchiveType'
+            chat_news_id: 'App\Entity\Chat\News\IdType'
+            
+            chat_user_role: 'App\Entity\Chat\User\RoleType'
+
+            chat_setting_name: 'App\Entity\Chat\Setting\NameType'
+            chat_setting_signification: 'App\Entity\Chat\Setting\SignificationType'
+
+            file_files_id: 'App\Entity\Files\File\IdType'
+
+        # IMPORTANT: You MUST configure your server version,
+        # either here or in the DATABASE_URL env var (see .env file)
+        #server_version: '5.7'
+    orm:
+        dql:
+            datetime_functions:
+                DATE: DoctrineExtensions\Query\Mysql\Date
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            Chat:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity/Chat'
+                prefix: 'App\Entity\Chat'
+                alias: Chat
+            Files:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity/Files'
+                prefix: 'App\Entity\Files'
+                alias: Files

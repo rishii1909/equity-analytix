@@ -1,0 +1,29 @@
+.alert{
+  width: 100%;
+  padding: 100px 20px 122px;
+  box-sizing: border-box;
+  background-color: $black;
+  &__title{
+    width: 348px;
+    margin: 0 auto 55px;
+  }
+  &__video-wrapper{
+    width: 100%;
+    max-width: 980px;
+    box-shadow: $image-shadow;
+    margin: 0 auto;
+  }
+  &__video{
+    outline: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .alert{
+    padding: 24px 16px;
+    &__title{
+      width: 175px;
+      margin-bottom: 28px;
+    }
+  }
+}

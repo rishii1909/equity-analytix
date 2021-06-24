@@ -1,0 +1,187 @@
+.comments {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 20px 82px;
+  box-sizing: border-box;
+
+  &__title {
+    width: 196px;
+    margin: 0 auto;
+  }
+
+  &__slick {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  &__slide-text {
+    width: 100%;
+    max-width: 780px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0 auto;
+    vertical-align: middle;
+  }
+
+  &__slide {
+    outline: none;
+    opacity: 0;
+  }
+
+  &__slide-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    opacity: 1;
+    transition: all .4s ease-out;
+  }
+
+}
+
+.comments-slick {
+  transition: all 2s;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+
+  &__slide {
+    outline: none;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 68px;
+    height: 32px;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 1s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-image: $large-arrow;
+    }
+  }
+
+  .slick-prev {
+    left: -18px;
+
+    &::after {
+      transform: rotate(90deg);
+    }
+
+    &.move {
+      left: calc(50% - 24px);
+    }
+  }
+
+  .slick-next {
+    left: calc(100% - 52px);
+
+
+    &::after {
+      transform: rotate(270deg);
+    }
+
+    &.move {
+      left: calc(50% - 52px);
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 0;
+    border: 1px solid $black;
+
+    button {
+      width: 36px;
+      height: 20px;
+      border: 1px solid $black;
+      background-color: $dark;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .slick-active button {
+      background-color: $primary-light;
+    }
+  }
+}
+
+.hidden-slide {
+  width: 74px;
+}
+
+@media (max-width: 1100px) {
+  .comments {
+    padding: 24px 16px;
+
+    &__title {
+      width: 102px;
+    }
+
+    &__slide-text {
+      width: calc(100% - 46px);
+      font-size: 12px;
+      line-height: 2;
+    }
+  }
+  .comments-slick {
+
+
+    .slick-dots button {
+      width: 18px;
+      height: 10px;
+    }
+
+    &__text-wrapper {
+      padding-right: 70px;
+      padding-left: 70px;
+    }
+
+    .slick-arrow {
+      width: 26px;
+    }
+
+    .slick-prev {
+      left: -10px;
+
+      &.move {
+        left: calc(50% + 4px);
+      }
+    }
+
+    .slick-next {
+      left: calc(100% - 16px);
+
+      &.move {
+        left: calc(50% - 4px);
+      }
+    }
+
+  }
+}

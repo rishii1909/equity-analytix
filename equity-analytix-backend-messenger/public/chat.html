@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+<body>
+<script language="JavaScript">
+
+    //send the id of the room from which the message came
+    const roomId = 5;
+
+    var conn = new WebSocket('ws://demo.equity_msg.dev7.sibers.com:58083/private/' + roomId);
+
+    conn.onopen = function (e) {
+
+        console.log("socket connected");
+        //test message
+        let token = /*Auth_token*/;
+        let userId = 2;
+        let text = "correct token message text";
+        let connAddress =  conn.url;
+
+        var authElements = "{" +
+            "\"token\":\""+token+"\"," +
+            "\"connAddress\":\""+connAddress+"\"," +
+            "\"user\":\""+userId+"\"," +
+            "\"room\":\""+roomId+"\"," +
+            "\"text\":\""+text+"\"" +
+            "}";
+        conn.send(authElements);
+    };
+
+    conn.onmessage = function (e) {
+        console.log(e.data);
+    };
+
+</script>
+</body>
+</html>

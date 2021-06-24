@@ -1,0 +1,27 @@
+.div-table {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: medium;
+    display: table;
+    width: auto;
+    background-color: #eee;
+    border-spacing: 5px;
+}
+.div-table-row {
+    display: table-row;
+    width: auto;
+    clear: both;
+}
+.div-table-col {
+    float: left;
+    display: table-column;
+    width: 200px;
+    background-color: whitesmoke;
+}
+.ea_chat {
+    position: absolute;
+    bottom: 0;
+    float: right;
+    margin-left: 45%;
+    width: 100%;
+    z-index: 9999;
+}

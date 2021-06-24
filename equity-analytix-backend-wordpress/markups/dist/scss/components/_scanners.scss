@@ -1,0 +1,261 @@
+.scanners {
+  background-repeat: no-repeat;
+  background-position-y: top;
+  background-position-x: center;
+  background-color: $black;
+  padding-top: 100px;
+
+  &__title {
+    margin: 0 auto 32px;
+    width: 520px;
+  }
+
+  &__subtitle {
+    margin: 0 auto 32px;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+  }
+
+  &__card {
+    width: 100%;
+    max-width: 1182px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px 12px 82px;
+    box-sizing: border-box;
+    border-bottom: 4px solid $black-line;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    &--line-off {
+      border: none;
+    }
+
+    &--bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background-color: $black;
+    }
+  }
+
+  &__card-col {
+    width: 50%;
+    padding: 0 28px;
+    box-sizing: border-box;
+    transition: all .5s ease-in-out;
+
+    &--l {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+
+    &--r {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+  }
+
+  &__card-image-wrapper {
+    line-height: 0;
+    width: 100%;
+
+    &--shadow {
+      box-shadow: $image-shadow;
+    }
+  }
+
+  &__sticky {
+    position: sticky;
+    top: 100px;
+  }
+
+  &__card.hidden .scanners__sticky {
+    top: 0;
+  }
+
+  &__card-image {
+    width: 100%;
+  }
+
+  &__ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__li {
+    position: relative;
+    padding-left: 18px;
+    box-sizing: border-box;
+    margin-bottom: 14px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background-color: $primary;
+    }
+
+    &--um {
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__form-wrapper {
+    width: 100%;
+    padding-top: 115px;
+    opacity: 1;
+    transition: all .7s ease-in;
+
+    &--move {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+  }
+
+  &__cs-wrapper {
+    width: 100%;
+    height: 300px;
+    border: 2px solid $dark-bg-3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__cs-badge {
+    display: inline-block;
+    transform: rotate(-30deg);
+    color: $dark-bg-3;
+  }
+}
+
+.scanners-form {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  background-color: $dark-bg-2;
+  border-top: 1px solid $dark-bg-3;
+  border-bottom: 1px solid $dark-bg-3;
+  border-left: 1px solid $btn-grey-2;
+  border-right: 1px solid $btn-grey-2;
+
+  &__header {
+    padding: 6px 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $black-line-2;
+  }
+
+  &__body {
+    padding: 12px 16px 6px;
+    box-sizing: border-box;
+  }
+
+  &__group {
+    margin-bottom: 6px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__input {
+    display: block;
+    width: calc(100% - 94px);
+    background-color: $black;
+    color: $white;
+    line-height: 34px;
+    border: none;
+    padding: 0 8px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  &__submit {
+    display: block;
+    padding: 6px 14px;
+    background-color: $primary;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+
+    &:hover {
+      transition: .4s;
+      background-color: $secondary;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .scanners {
+    padding-top: 40px;
+
+    &__title {
+      width: 265px;
+      margin-bottom: 0;
+    }
+
+    &__subtitle {
+      margin-bottom: 14px;
+    }
+
+    &__card {
+      padding: 24px 16px;
+    }
+
+    &__text {
+      margin-bottom: 14px;
+    }
+
+    &__card-col {
+      padding: 0 14px;
+    }
+    &__cs-wrapper{
+      height: 160px;
+    }
+    &__form-wrapper{
+      padding-top: 48px;
+    }
+  }
+  .scanners-form{
+    &__label, &__input{
+      font-size: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .scanners {
+    &__card {
+      padding-bottom: 0;
+    }
+    &__cs-wrapper{
+      height: 49vw;
+    }
+    &__card-col {
+      padding: 0;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+  }
+  .scanners-form{
+
+  }
+}

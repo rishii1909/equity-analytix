@@ -1,0 +1,6 @@
+vendor
+web/*
+log
+.git*
+.idea/
+.rsync.exclude

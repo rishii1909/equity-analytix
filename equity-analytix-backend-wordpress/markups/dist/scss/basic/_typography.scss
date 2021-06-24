@@ -1,0 +1,153 @@
+.headline-1 {
+  font-family: $font-primary;
+  font-size: 42px;
+  font-weight: 500;
+  color: $text;
+}
+
+.headline-2{
+  font-family: $font-primary;
+  font-size:  28px;
+  font-weight: 500;
+  color: $text;
+}
+
+.headline-3{
+  font-family: $font-primary;
+  font-size:  20px;
+  font-weight: 400;
+  color: $text;
+}
+
+.headline-4{
+  font-family: $font-primary;
+  font-size:  24px;
+  font-weight: 500;
+  color: $text;
+}
+.headline-5{
+  font-family: $font-primary;
+  font-size:  22px;
+  font-weight: 500;
+  color: $text;
+}
+.headline-6{
+  font-family: $font-primary;
+  font-size: 36px;
+  font-weight: 500;
+  color: $text;
+}
+
+
+.subtitle-1{
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: 700;
+  color: $text;
+}
+
+.subtitle-2{
+  font-family: $font-primary;
+  font-size: 22px;
+  font-weight: 400;
+  color: $text;
+  text-transform: uppercase;
+}
+
+
+
+.body-1{
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $text;
+}
+
+.body-2{
+  font-family: $font-primary;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: $text;
+}
+
+.body-3{
+  font-family: $font-primary;
+  font-size: 17px;
+  font-weight: 500;
+  color: $text;
+}
+
+.btn-text-1 {
+  font-family:  $font-primary;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $text;
+}
+
+.btn-text-2 {
+  font-family:  $font-primary;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $text;
+}
+
+.nav-text{
+  font-family:  $font-primary;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $gray;
+}
+
+@media (max-width: 1100px){
+  .headline-1 {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .headline-2{
+    font-size:  16px;
+  }
+
+  .headline-3{
+    font-size:  12px;
+  }
+
+  .headline-4{
+    font-size:  19px;
+  }
+  .headline-5{
+    font-size:  16px;
+  }
+  .headline-6{
+    font-size: 18px;
+  }
+
+  .subtitle-1{
+    font-size: 12px;
+  }
+
+  .subtitle-2{
+    font-size: 12px;
+  }
+
+  .body-1{
+    font-size: 12px;
+  }
+
+  .body-3{
+    font-size: 11px;
+  }
+
+  .btn-text-1 {
+    font-size: 11px;
+  }
+
+  .btn-text-2 {
+    font-size: 12px;
+  }
+}

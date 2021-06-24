@@ -1,0 +1,45 @@
+{
+    "name": "johnpbloch/wordpress-skeleton",
+    "description": "WordPress, Composer",
+    "keywords": ["wordpress"],
+    "license": "MIT",
+    "repositories": [
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "composer/installers": "~1.0",
+        "johnpbloch/wordpress": "4.9.4",
+        "authorizenet/authorizenet": "2.0.0",
+        "ext-redis": "*"
+    },
+    "require-dev": {
+        "wp-cli/wp-cli-bundle": "*"
+    },
+    "autoload": {},
+    "extra": {
+        "wordpress-install-dir": "web",
+        "installer-paths": {
+            "web/wp-content/plugins/{$name}": ["type:wordpress-plugin"],
+            "web/wp-content/themes/{$name}": ["type:wordpress-theme"],
+            "web/wp-content/mu-plugins/{$name}": ["type:wordpress-muplugin"]
+        }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -f web/wp-content/plugins/equity_plugin",
+            "ln -s -r equity_plugin web/wp-content/plugins"
+        ],
+        "post-install-cmd": [
+            "rm -f web/wp-content/plugins/equity_plugin",
+            "ln -s -r equity_plugin web/wp-content/plugins"
+        ],
+        "link-themes-cmd": [
+            "rm -f web/wp-content/themes/equity_theme",
+            "ln -s -r equity_theme web/wp-content/themes/equity_theme"
+        ]
+    }
+}

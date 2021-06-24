@@ -1,0 +1,95 @@
+.flipper {
+  position: relative;
+  perspective: 450px;
+  transform-origin: 100% center;
+
+  &__front, &__back{
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform .8s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__front{
+    z-index: 2;
+    transform: rotateX(0deg);
+  }
+  &.flip &__front{
+    transform: rotateX(180deg);
+  }
+  &__back{
+    transform: rotateX(-180deg);
+  }
+  &.flip &__back{
+    transform: rotateX(0deg);
+  }
+}
+
+.flipper-wrapper{
+  height: 34px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  &--2{
+    width: 50px;
+  }
+
+  &--1s{
+    width: 189px;
+  }
+  &--2s{
+    width: 150px;
+  }
+  &--3s{
+    width: 75px;
+  }
+
+  &--4s{
+    width: 51px;
+  }
+  &--5s{
+    width: 28px;
+  }
+  &--6s{
+    width: 35px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .flipper-wrapper {
+    height: auto;
+    &--2 {
+      width: 28px;
+    }
+
+    &--1s {
+      width: 96px;
+    }
+
+    &--2s {
+      width: 72px;
+    }
+    .ls-2{
+      letter-spacing: 1px;
+    }
+
+    &--3s {
+      width: 41px;
+    }
+
+    &--4s {
+      width: 27px;
+    }
+
+    &--5s {
+      width: 16px;
+    }
+  }
+}
+
+
+
+
+

@@ -1,0 +1,8 @@
+.build
+vendor
+web/*
+var/*
+log
+.git*
+.idea/
+.rsync.exclude

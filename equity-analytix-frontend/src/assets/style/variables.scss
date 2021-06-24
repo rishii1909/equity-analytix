@@ -1,0 +1,107 @@
+$chat-primary: #111;
+$chat-primary-light: #111;
+
+$chat-secondary: #202020;
+$chat-secondary-light: #202020;
+
+$chat-tertiary: #000;
+$chat-tertiary-light: #000;
+
+$chat-message-list: #111;
+$chat-message-list-light: #f1f1f1;
+
+$chat-message: #202020;
+$chat-message-light: #ffffff;
+
+$chat-message-hover: #000;
+$chat-message-hover-light: #f3f2f2;
+
+$chat-text: #fff;
+$chat-text-light: #000;
+
+$chat-input: #000;
+$chat-input-light: #fff;
+
+$chat-input-text: #fff;
+$chat-input-text-light: #000;
+
+$chat-input-placeholder: #262626;
+$chat-input-placeholder-light: #e0e0e0;
+
+$chat-send-button-text: #bfbfbf;
+$chat-send-button-text-light: #000;
+
+$chat-message-green: #14642b;
+$chat-message-green-light: #b5ee9f;
+
+$chat-message-red: #892a2a;
+$chat-message-red-light: #eb8a87;
+
+$chat-message-yellow: #928b2b;
+$chat-message-yellow-light: #fef99a;
+
+$chat-message-grey: #636363;
+$chat-message-grey-light: #cfcfcf;
+
+$chat-item-delete: #2d2d2d;
+$chat-item-delete-light: #d4d4d4;
+
+$chat-time-posted-background: #000;
+$chat-time-posted-background-light: #dbdbdb;
+
+$chat-time-active-color: #636363;
+$chat-time-active-color-light: #b8b7b7;
+
+$chat-date-posted-color: #fff;
+$chat-date-posted-color-light: #000;
+
+:root {
+  --body-backgorund: '';
+  --font-size-message: '';
+  --font-weight-message: '';
+  --link-color: '';
+  --stock-symbol-color: '';
+  --time-posted-color: '';
+
+  --chat-primary: #{$chat-primary};
+  --chat-secondary: #{$chat-secondary};
+  --chat-tertiary: #{$chat-tertiary};
+  --chat-message-list: #{$chat-message-list};
+  --chat-message: #{$chat-message};
+  --chat-message-hover: #{$chat-message-hover};
+  --chat-text: #{$chat-text};
+  --chat-input: #{$chat-input};
+  --chat-input-text: #{$chat-input-text};
+  --chat-input-placeholder: #{$chat-input-placeholder};
+  --chat-send-button-text: #{$chat-send-button-text};
+  --chat-message-green: #{$chat-message-green};
+  --chat-message-red: #{$chat-message-red};
+  --chat-message-yellow: #{$chat-message-yellow};
+  --chat-message-grey: #{$chat-message-grey};
+  --chat-item-delete: #{$chat-item-delete};
+  --chat-time-posted-background: #{$chat-time-posted-background};
+  --chat-time-active-color: #{$chat-time-active-color};
+  --chat-date-posted-color: #{$chat-date-posted-color};
+}
+
+.light {
+  --chat-primary: #{$chat-primary-light};
+  --chat-secondary: #{$chat-secondary-light};
+  --chat-tertiary: #{$chat-tertiary-light};
+  --chat-message-list: #{$chat-message-list-light};
+  --chat-message: #{$chat-message-light};
+  --chat-message-hover: #{$chat-message-hover-light};
+  --chat-text: #{$chat-text-light};
+  --chat-input: #{$chat-input-light};
+  --chat-input-text: #{$chat-input-text-light};
+  --chat-input-placeholder: #{$chat-input-placeholder-light};
+  --chat-send-button-text: #{$chat-send-button-text-light};
+  --chat-message-green: #{$chat-message-green-light};
+  --chat-message-red: #{$chat-message-red-light};
+  --chat-message-yellow: #{$chat-message-yellow-light};
+  --chat-message-grey: #{$chat-message-grey-light};
+  --chat-item-delete: #{$chat-item-delete-light};
+  --chat-time-posted-background: #{$chat-time-posted-background-light};
+  --chat-time-active-color: #{$chat-time-active-color-light};
+  --chat-date-posted-color: #{$chat-date-posted-color-light};
+}
